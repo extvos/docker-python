@@ -15,4 +15,12 @@ RUN cd /opt \
 	&& tar xf Python-2.7.6.tar.xz \
 	&& cd Python-2.7.6 \
 	&& ./configure --prefix=/usr/local \
-	&& make && make altinstall
+	&& make && make altinstall \
+	&& ln -s /usr/local/bin/python2.7 /usr/local/bin/python \
+	&& cd ../ \
+	&& rm -rf Python-2.7.6.tar.xz Python-2.7.6
+
+RUN wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py \
+	&& /usr/local/bin/python2.7 ez_setup.py \
+	&& rm -f ez_setup.py \
+	&& /usr/local/bin/easy_install-2.7 pip
