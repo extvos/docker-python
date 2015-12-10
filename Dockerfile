@@ -1,8 +1,7 @@
 FROM extvos/centos
-
 MAINTAINER  "Mingcai SHEN <archsh@gmail.com>"
-
 ENV PYTHON_VERSION 2.7.6
+
 RUN yum groupinstall -y "Development tools"  \
 	&& yum install -y zlib-devel \
 	&& yum install -y bzip2-devel \
