@@ -3,7 +3,7 @@ MAINTAINER  "Mingcai SHEN <archsh@gmail.com>"
 ENV PYTHON_MAJOR   2.7
 ENV PYTHON_VERSION 2.7.6
 
-RUN yum install -y xz autoconf automake gcc zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel mysql-devel
+RUN yum install -y xz autoconf automake gcc gcc-c++ zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel mysql-devel mysql-libs boost-devel
 
 RUN cd /opt \
 	&& wget --no-check-certificate https://www.python.org/ftp/python/${PYTHON_VERSION}/Python-${PYTHON_VERSION}.tar.xz \
